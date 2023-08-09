@@ -1,10 +1,14 @@
-import { useState } from "react";
-import { PrimaryButton } from "@fluentui/react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/home/Home";
+import NotFound from "./pages/not-found/NotFound";
 
 function App() {
   return (
     <>
-      <PrimaryButton text="Hola Fluentui" className="button" />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }
