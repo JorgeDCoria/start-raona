@@ -1,20 +1,25 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Movie } from "../../types/Movie";
 import { MovieDetail } from "../../types/MovieDetail";
-interface moviesState {
-  movies: Movie[];
+import { DataApi } from "../../types/DataApi";
+
+interface MoviesState {
+  data: DataApi;
   detail: Movie | null;
 }
-const initialState: moviesState = {
-  movies: [],
+const initialState: MoviesState = {
+  data: {} as DataApi,
   detail: null,
 };
 export const moviesSlice = createSlice({
   name: "movies",
   initialState: initialState,
   reducers: {
-    getMovies: (state, action: PayloadAction<Movie[]>) => {
-      state.movies = action.payload;
+    getMovies: (state, action: PayloadAction<DataApi>) => {
+      state.data = action.payload;
+    },
+    getMoviesByTitle: (state, action: PayloadAction<DataApi>) => {
+      state.data = action.payload;
     },
     getMovieById: (state, action: PayloadAction<MovieDetail>) => {
       state.detail = action.payload;
@@ -22,5 +27,6 @@ export const moviesSlice = createSlice({
   },
 });
 
-export const { getMovies, getMovieById } = moviesSlice.actions;
+export const { getMovies, getMovieById, getMoviesByTitle } =
+  moviesSlice.actions;
 export default moviesSlice.reducer;

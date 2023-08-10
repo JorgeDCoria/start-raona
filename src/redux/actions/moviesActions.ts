@@ -1,14 +1,29 @@
 import movieService from "../../services/moviesService";
-import { getMovies, getMovieById } from "../slices/moviesSlice";
+import {
+  getMovies,
+  getMovieById,
+  getMoviesByTitle,
+} from "../slices/moviesSlice";
 import { addError } from "../slices/errorSlice";
 import { Dispatch } from "redux";
 import { type MovieDetail } from "../../types/MovieDetail";
-import { CustomError } from "../../types/CustomError";
-export const getActionGetMovies = () => {
+
+export const actionGetMovies = (page: number = 1) => {
   return async (dispatch: Dispatch) => {
     try {
-      const movies = await movieService.getMovies();
-      Array.isArray(movies) && dispatch(getMovies(movies));
+      const data = await movieService.getMovies(page);
+      dispatch(getMovies(data));
+    } catch (e: any) {
+      dispatch(addError(e));
+    }
+  };
+};
+
+export const actionGetMoviesByTitle = (title: string, page: number = 1) => {
+  return async (dispatch: Dispatch) => {
+    try {
+      const data = await movieService.getMoviesByTitle(title, page);
+      dispatch(getMoviesByTitle(data));
     } catch (e: any) {
       dispatch(addError(e));
     }
