@@ -1,3 +1,17 @@
-.button {
-  background-color: map-get($primary, "dark");
+.button-primary {
+  border-radius: 16px;
+  color: map-get($secondary, "main");
+  height: 40px;
+  background-color: map-get($primary, "400");
+
+  & span {
+    font-weight: 700;
+  }
+
+  & span:hover {
+    background-color: transparent;
+  }
+  &:hover {
+    background-color: map-get($primary, "main");
+  }
 }

@@ -13,7 +13,7 @@ const mapApiToMovie = (data: any): Movie => {
     id: data.id,
     image: data.poster_path,
     releaseDate: data.release_date,
-    summary: data.overView,
+    summary: data.overview,
     title: data.title,
   };
 };
@@ -34,7 +34,7 @@ const mapApiToMovieDetail = (data: any): MovieDetail => {
     id: data.id,
     image: data.poster_path,
     releaseDate: data.release_date,
-    summary: data.overView,
+    summary: data.overview,
     title: data.title,
     genre: data.genres.map((g: any) => g.name),
     adult: data.adult,

@@ -14,4 +14,23 @@ $secondary: (
   "main": #161823,
   "ligth": #eff0f5,
   "dark": #1e202f,
+  "100": #d0d3e1,
+  "200": #b1b5ce,
+  "300": #9198ba,
+  "400": #727aa6,
+  "500": #59618d,
+  "600": #59618d,
+  "700": #31364e,
 );
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}

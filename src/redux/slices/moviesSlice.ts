@@ -4,11 +4,11 @@ import { MovieDetail } from "../../types/MovieDetail";
 import { DataApi } from "../../types/DataApi";
 
 interface MoviesState {
-  data: DataApi;
+  data: DataApi | null;
   detail: Movie | null;
 }
 const initialState: MoviesState = {
-  data: {} as DataApi,
+  data: null,
   detail: null,
 };
 export const moviesSlice = createSlice({
