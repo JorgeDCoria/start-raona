@@ -1,5 +1,6 @@
 import movieService from "../../services/moviesService";
 import { getMovies } from "../slices/moviesSlice";
+import { addError } from "../slices/errorSlice";
 import { Dispatch } from "redux";
 export const getActionGetMovies = () => {
   return async (dispatch: Dispatch) => {
@@ -7,7 +8,7 @@ export const getActionGetMovies = () => {
       const movies = await movieService.getMovies();
       Array.isArray(movies) && dispatch(getMovies(movies));
     } catch (e: any) {
-      console.log(e.message);
+      dispatch(addError(e));
     }
   };
 };
