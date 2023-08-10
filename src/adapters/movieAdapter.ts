@@ -1,4 +1,5 @@
 import { Movie } from "../types/Movie";
+import { MovieDetail } from "../types/MovieDetail";
 
 /**
  * Funcion definida para mapear un objeto movie de la api a un
@@ -28,9 +29,26 @@ const mapApiToMovies = (data: any[]): Movie[] => {
   return movies;
 };
 
+const mapApiToMovieDetail = (data: any): MovieDetail => {
+  return {
+    id: data.id,
+    image: data.poster_path,
+    releaseDate: data.release_date,
+    summary: data.overView,
+    title: data.title,
+    genre: data.genres.map((g: any) => g.name),
+    adult: data.adult,
+    budget: data.budget,
+    originalLanguage: data.original_language,
+    productionCompanies: data.production_companies.map((c: any) => c.name),
+    languages: data.spoken_languages.map((l: any) => l.english_name),
+    voteCount: data.vote_count,
+  };
+};
 const movieAdapter = {
   mapApiToMovie,
   mapApiToMovies,
+  mapApiToMovieDetail,
 };
 
 export default movieAdapter;

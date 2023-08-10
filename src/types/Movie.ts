@@ -4,5 +4,4 @@ export type Movie = {
   summary: string;
   image: string;
   releaseDate: string;
-  genre?: string[];
 };
