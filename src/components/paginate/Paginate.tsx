@@ -38,14 +38,23 @@ export default function Paginate() {
   };
 
   return (
-    <div>
-      <button onClick={() => {}}>&lt;</button>
-      {buttons.map((pageNumber) => (
-        <button onClick={() => {}} key={pageNumber}>
-          {pageNumber}
-        </button>
-      ))}
-      <button onClick={() => {}}>&gt;</button>
+    <div className="paginate">
+      <button className=" button left" onClick={() => {}}>
+        <span>&lt;</span>
+      </button>
+      {numberPage &&
+        buttons.map((num) => (
+          <button
+            className={`button ${numberPage === num ? "button-active" : ""}`}
+            onClick={() => {}}
+            key={num}
+          >
+            <span>{num}</span>
+          </button>
+        ))}
+      <button className="button rigth" onClick={() => {}}>
+        <span>&gt;</span>
+      </button>
     </div>
   );
 }
