@@ -5,7 +5,7 @@ import { DataApi } from "../../types/DataApi";
 
 interface MoviesState {
   data: DataApi | null;
-  detail: Movie | null;
+  detail: MovieDetail | null;
 }
 const initialState: MoviesState = {
   data: null,
