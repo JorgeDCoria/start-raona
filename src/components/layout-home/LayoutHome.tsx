@@ -1,12 +1,10 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
-interface LayoutHomeProps {
-  children: React.ReactNode;
-}
-const LayoutHome: React.FC<LayoutHomeProps> = ({ children }) => {
+const LayoutHome = () => {
   return (
     <div>
-      <main>{children}</main>
+      <Outlet />
     </div>
   );
 };

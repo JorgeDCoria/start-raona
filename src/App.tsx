@@ -3,6 +3,8 @@ import Home from "./pages/home/Home";
 import NotFound from "./pages/not-found/NotFound";
 import { initializeIcons, createTheme } from "@fluentui/react";
 import { loadTheme } from "@fluentui/react";
+import LayoutHome from "./components/layout-home/LayoutHome";
+import MovieDetail from "./pages/movie-detail/MovieDetail";
 
 initializeIcons();
 const myTheme = createTheme({
@@ -38,7 +40,8 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<LayoutHome />} />
+        <Route index element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
