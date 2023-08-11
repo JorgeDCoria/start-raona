@@ -26,8 +26,7 @@ const Home = () => {
     showModal();
   };
   useEffect(() => {
-    //dispatch(actionGetMoviesByTitle("rambo"));
-    // dispatch(actionGetMovieById(614479));
+    dispatch(actionGetMovies());
   }, [dispatch]);
 
   return (

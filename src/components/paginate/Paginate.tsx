@@ -1,17 +1,12 @@
 import { useEffect, useState } from "react";
 import { useAppSelector, useAppDispatch } from "../../hooks/useStore";
+import { actionGetMovies } from "../../redux/actions/moviesActions";
 
 export default function Paginate() {
   const [buttons, setButtons] = useState<number[]>([]);
   const { page: numberPage, totalPages } =
     useAppSelector((state) => state.movies.data) || {};
-
-  useEffect(() => {
-    if (numberPage !== undefined && totalPages !== undefined) {
-      const newButtons = buildNumberButtons(numberPage, totalPages);
-      setButtons(newButtons);
-    }
-  }, [numberPage, totalPages]);
+  const dispatch = useAppDispatch();
 
   const buildNumberButtons = (
     numberPage: number,
@@ -37,22 +32,46 @@ export default function Paginate() {
     return blockPagination;
   };
 
+  useEffect(() => {
+    if (numberPage !== undefined && totalPages !== undefined) {
+      const newButtons = buildNumberButtons(numberPage, totalPages);
+      setButtons(newButtons);
+    }
+  }, [numberPage, totalPages, buildNumberButtons]);
+
+  const handlePage = (page: number) => {
+    numberPage !== page && dispatch(actionGetMovies(page));
+  };
+
+  const nextPage = () => {
+    if (numberPage) {
+      let numPage = numberPage === totalPages ? 1 : numberPage + 1;
+      dispatch(actionGetMovies(numPage));
+    }
+  };
+
+  const prevPage = () => {
+    if (numberPage) {
+      let numPage = numberPage === 1 ? totalPages : numberPage - 1;
+      dispatch(actionGetMovies(numPage));
+    }
+  };
   return (
     <div className="paginate">
-      <button className=" button left" onClick={() => {}}>
+      <button className=" button left" onClick={nextPage}>
         <span>&lt;</span>
       </button>
       {numberPage &&
         buttons.map((num) => (
           <button
             className={`button ${numberPage === num ? "button-active" : ""}`}
-            onClick={() => {}}
+            onClick={() => handlePage(num)}
             key={num}
           >
             <span>{num}</span>
           </button>
         ))}
-      <button className="button rigth" onClick={() => {}}>
+      <button className="button rigth" onClick={prevPage}>
         <span>&gt;</span>
       </button>
     </div>
