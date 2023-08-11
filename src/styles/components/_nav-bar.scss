@@ -1,0 +1,99 @@
+.nav-bar-container {
+  border: 2px solid red;
+  margin: 0;
+  min-height: 60px;
+  display: flex;
+  padding: 0 16px;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    display: none;
+  }
+  .button-menu {
+    background-color: transparent;
+    border: 1px map-get($primary, "main") solid;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition-property: scale;
+    transition-duration: 0.7s;
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+  .list-menu {
+    display: none;
+  }
+
+  .subcontainer {
+    display: none;
+  }
+  @include tablet {
+    .logo {
+      color: map-get($primary, "main");
+      text-transform: uppercase;
+      display: block;
+    }
+    .logo span {
+      color: white;
+    }
+
+    .subcontainer {
+      display: flex;
+      gap: 16px;
+      font-size: 1.2rem;
+      color: white;
+      align-items: center;
+      .notification {
+        position: relative;
+
+        .alert {
+          top: -2px;
+          right: -1px;
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: red;
+          color: red;
+        }
+      }
+      .avatar {
+        background-color: map-get($primary, "main");
+        padding: 6px;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+  @include desktop {
+    .logo {
+      font-size: 1.3rem;
+    }
+    .button-menu {
+      display: none;
+    }
+    .list-menu {
+      display: flex;
+      color: white;
+      list-style: none;
+      gap: 16px;
+      text-transform: capitalize;
+
+      .tab {
+        cursor: pointer;
+        transition-property: font-size;
+        transition-duration: 0.7s;
+
+        &:hover {
+          color: map-get($primary, "main");
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}

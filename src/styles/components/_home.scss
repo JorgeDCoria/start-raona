@@ -6,6 +6,7 @@
   align-items: center;
   gap: 16px;
   margin: 0;
+  padding: 0 16px;
   @include tablet {
     grid-template-columns: repeat(3, minmax(200px, 1fr));
   }

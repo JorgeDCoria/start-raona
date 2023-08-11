@@ -1,7 +1,7 @@
 .button-primary {
   border-radius: 16px;
   color: map-get($secondary, "main");
-  height: 40px;
+  min-height: 24px;
   background-color: map-get($primary, "400");
 
   & span {

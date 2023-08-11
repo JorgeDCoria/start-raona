@@ -25,15 +25,13 @@ const Home = () => {
     showModal();
   };
   useEffect(() => {
-    dispatch(actionGetMoviesByTitle("rambo"));
+    //dispatch(actionGetMoviesByTitle("rambo"));
     // dispatch(actionGetMovieById(614479));
   }, [dispatch]);
   console.log(data);
 
   return (
     <>
-      <h1>HOla mundo</h1>
-      <PrimaryButton text="Cambios" className="button-primary" />
       <div className="home-containercards">
         {data &&
           data.results.map((movie) => (
