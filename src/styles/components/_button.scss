@@ -1,18 +1,28 @@
 .button-primary {
-  border-radius: 16px;
-  color: map-get($secondary, "main");
-  min-height: 24px;
+  border-radius: 8px;
+
+  height: 24px;
   background-color: map-get($primary, "400");
 
   & span {
     font-weight: 700;
+    color: map-get($secondary, "main");
+    font-size: 12px;
   }
 
   & span:hover {
     background-color: transparent;
   }
-  &:hover {
-    background-color: map-get($primary, "main");
+  &:hover span {
+    color: white;
+  }
+
+  @include desktop {
+    height: 40px;
+
+    & span {
+      font-size: 1rem;
+    }
   }
 }
 .button-default {

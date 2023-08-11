@@ -22,7 +22,9 @@ $secondary: (
   "600": #59618d,
   "700": #31364e,
 );
+// images
 
+// queries
 @mixin tablet {
   @media screen and (min-width: 768px) {
     @content;

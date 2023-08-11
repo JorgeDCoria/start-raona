@@ -1,12 +1,15 @@
 .nav-bar-container {
-  border: 2px solid red;
   margin: 0;
   min-height: 60px;
   display: flex;
   padding: 0 16px;
   justify-content: space-between;
   align-items: center;
-
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: map-get($secondary, "main");
+  width: 100%;
   .logo {
     display: none;
   }

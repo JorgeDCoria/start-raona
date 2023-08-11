@@ -1,12 +1,13 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 import NavBar from "../layout/navbar/NavBar";
+import Banner from "../banner/Banner";
 
 const LayoutHome = () => {
   return (
     <div>
       <NavBar />
-      hola que utal
+      <Banner />
+
       <Outlet />
     </div>
   );
