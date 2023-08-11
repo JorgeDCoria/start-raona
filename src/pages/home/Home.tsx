@@ -11,6 +11,7 @@ import { useBoolean } from "@fluentui/react-hooks";
 import CardMovie from "../../components/card-movie/CardMovie";
 import MovieDetail from "./components/movie-detail/MovieDetail";
 import Loading from "../../components/loading/Loading";
+import Paginate from "../../components/paginate/Paginate";
 // Una página "Inicio" con el listado de Peliculas
 //(visualmente con la imagen, el título y el año de la película) con un buscador por texto en el título.
 const Home = () => {
@@ -28,10 +29,10 @@ const Home = () => {
     //dispatch(actionGetMoviesByTitle("rambo"));
     // dispatch(actionGetMovieById(614479));
   }, [dispatch]);
-  console.log(data);
 
   return (
     <>
+      <Paginate />
       <div className="home-containercards">
         {data &&
           data.results.map((movie) => (
