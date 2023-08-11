@@ -1,0 +1,29 @@
+.search-bar {
+  display: flex;
+  gap: 8px;
+
+  .search-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+      min-height: 30px;
+      padding-left: 32px;
+      background-color: transparent;
+      border-bottom: 2px solid map-get($primary, "main");
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      outline: none;
+      caret-color: map-get($primary, "main");
+      color: white;
+    }
+  }
+  @include tablet {
+    gap: 16px;
+    .search-input input {
+      min-width: 300px;
+    }
+  }
+}
