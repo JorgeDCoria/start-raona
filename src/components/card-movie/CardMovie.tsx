@@ -8,6 +8,7 @@ const CardMovie: React.FC<CardMovieProps> = ({ movie }) => {
   return (
     <div className="cardmovie-container">
       <img className="cardmovie-img" src={movie.image} alt="" />
+
       <div className="cardmovie-container-description">
         <div className="subcontainer">
           <h1>{movie.title}</h1>
