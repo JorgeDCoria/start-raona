@@ -36,12 +36,14 @@ const mapApiToMovieDetail = (data: any): MovieDetail => {
     releaseDate: data.release_date,
     summary: data.overview,
     title: data.title,
-    genre: data.genres.map((g: any) => g.name),
+    genre: data.genres.map((g: any) => g.name).join(", "),
     adult: data.adult,
     budget: data.budget,
     originalLanguage: data.original_language,
-    productionCompanies: data.production_companies.map((c: any) => c.name),
-    languages: data.spoken_languages.map((l: any) => l.english_name),
+    productionCompanies: data.production_companies
+      .map((c: any) => c.name)
+      .join(", "),
+    languages: data.spoken_languages.map((l: any) => l.english_name).join(", "),
     voteCount: data.vote_count,
   };
 };

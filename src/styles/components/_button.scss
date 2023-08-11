@@ -15,3 +15,25 @@
     background-color: map-get($primary, "main");
   }
 }
+.button-default {
+  border-radius: 16px;
+  height: 40px;
+  border: 2px solid map-get($secondary, "main");
+  background-color: transparent;
+  transition-property: background-color;
+  transition-duration: 1.2s;
+
+  & span {
+    font-weight: 700;
+    color: map-get($secondary, "main");
+    transition-property: color;
+    transition-duration: 1.2s;
+  }
+  &:hover {
+    background-color: map-get($secondary, "main");
+
+    & span {
+      color: white;
+    }
+  }
+}
