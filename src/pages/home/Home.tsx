@@ -10,6 +10,7 @@ import { PrimaryButton, Modal } from "@fluentui/react";
 import { useBoolean } from "@fluentui/react-hooks";
 import CardMovie from "../../components/card-movie/CardMovie";
 import MovieDetail from "./components/movie-detail/MovieDetail";
+import Loading from "../../components/loading/Loading";
 // Una página "Inicio" con el listado de Peliculas
 //(visualmente con la imagen, el título y el año de la película) con un buscador por texto en el título.
 const Home = () => {
@@ -33,19 +34,19 @@ const Home = () => {
     <>
       <h1>HOla mundo</h1>
       <PrimaryButton text="Cambios" className="button-primary" />
-      {data && (
-        <div className="home-containercards">
-          <CardMovie movie={data.results[0]} handleClick={handleClick} />
-          <CardMovie movie={data.results[2]} handleClick={handleClick} />
-          <CardMovie movie={data.results[0]} handleClick={handleClick} />
-          <CardMovie movie={data.results[2]} handleClick={handleClick} />
-        </div>
-      )}
+      <div className="home-containercards">
+        {data &&
+          data.results.map((movie) => (
+            <CardMovie key={movie.id} movie={movie} handleClick={handleClick} />
+          ))}
+      </div>
 
-      {isModalOpen && idMovie && (
+      {isModalOpen && idMovie ? (
         <Modal isOpen={isModalOpen} onDismiss={hideModal} isBlocking={false}>
           <MovieDetail idMovie={idMovie} />
         </Modal>
+      ) : (
+        <Loading />
       )}
     </>
   );
