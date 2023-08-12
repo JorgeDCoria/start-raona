@@ -23,7 +23,7 @@ const addUrlToImage = (data: any[]): void => {
 const getMovies = async (page: number): Promise<DataApi> => {
   try {
     const data: DataApi = await axios
-      .get(`${URL_BASE}movie/populr?page=${page}&api_key=${API_KEY}`)
+      .get(`${URL_BASE}movie/popular?page=${page}&api_key=${API_KEY}`)
       .then((result) => {
         let movies = result.data.results;
         addUrlToImage(movies);

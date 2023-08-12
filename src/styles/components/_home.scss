@@ -19,3 +19,11 @@
 .home-modal {
   background-color: rgba(map-get($secondary, "main"), 0.8);
 }
+
+.container-message-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: map-get($primary, "main");
+  height: 50vh;
+}

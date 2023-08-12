@@ -31,11 +31,18 @@ const Home = () => {
     dispatch(actionGetMovies());
   }, [dispatch]);
 
+  const Empty: React.FC = () => (
+    <div className="container-message-empty">
+      <h2>No se encotraron Resultados</h2>
+    </div>
+  );
+
   if (error) return <Error />;
+  else if (!data) return <Loading />;
+  else if (!data.results.length) return <Empty />;
   else {
     return (
       <>
-        {" "}
         <Paginate />
         <div className="home-containercards">
           {data &&
