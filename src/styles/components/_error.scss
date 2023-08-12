@@ -1,0 +1,46 @@
+.container-error {
+  height: 30vh;
+
+  background-color: white;
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container-img {
+    width: 50%;
+    height: 100%;
+    display: flex;
+
+    img {
+      width: 100%;
+    }
+  }
+  .container-info {
+    width: 50%;
+    h2 {
+      color: red;
+    }
+  }
+
+  @include tablet {
+    .container-info {
+      h2 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+  @include desktop {
+    height: 70vh;
+
+    .container-img {
+      width: 30%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
