@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Movie } from "../../types/Movie";
 import { MovieDetail } from "../../types/MovieDetail";
 import { DataApi } from "../../types/DataApi";
 

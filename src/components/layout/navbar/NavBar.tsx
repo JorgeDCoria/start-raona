@@ -1,4 +1,3 @@
-import React from "react";
 import SearchBar from "../../search-bar/SearchBar";
 import { RiMenuFill, RiNotification2Line } from "react-icons/ri";
 

@@ -2,7 +2,6 @@ const URL_BASE = import.meta.env.VITE_APP_MOVIE_BASE_URL;
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 const URL_BASE_IMAGE = import.meta.env.VITE_APP_IMAGE_BASE_URL;
 import axios from "axios";
-import { Movie } from "../types/Movie";
 import movieAdapter from "../adapters/movieAdapter";
 import adapterError from "../adapters/errorAdapter";
 import { MovieDetail } from "../types/MovieDetail";
