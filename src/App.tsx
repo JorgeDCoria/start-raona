@@ -4,7 +4,6 @@ import NotFound from "./pages/not-found/NotFound";
 import { initializeIcons, createTheme } from "@fluentui/react";
 import { loadTheme } from "@fluentui/react";
 import LayoutHome from "./components/layout-home/LayoutHome";
-import MovieDetail from "./pages/movie-detail/MovieDetail";
 
 initializeIcons();
 const myTheme = createTheme({

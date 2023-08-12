@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
-import LayoutHome from "../../components/layout-home/LayoutHome";
+
 import { useAppDispatch, useAppSelector } from "../../hooks/useStore";
-import {
-  actionGetMovies,
-  actionGetMovieById,
-  actionGetMoviesByTitle,
-} from "../../redux/actions/moviesActions";
-import { PrimaryButton, Modal } from "@fluentui/react";
+import { actionGetMovies } from "../../redux/actions/moviesActions";
+import { Modal } from "@fluentui/react";
 import { useBoolean } from "@fluentui/react-hooks";
 import CardMovie from "../../components/card-movie/CardMovie";
 import MovieDetail from "./components/movie-detail/MovieDetail";
