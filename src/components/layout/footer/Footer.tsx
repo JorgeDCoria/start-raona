@@ -1,6 +1,5 @@
-import React from "react";
 import { RiMailSendFill, RiLinkedinFill, RiGithubFill } from "react-icons/ri";
-import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div className="footer">

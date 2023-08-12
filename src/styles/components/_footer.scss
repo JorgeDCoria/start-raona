@@ -14,16 +14,21 @@
     height: 100%;
     display: grid;
     grid-template-columns: 60% 40%;
-    align-items: start;
 
     .container-logo {
       padding: 0 16px;
       color: white;
+      height: 100%;
+      display: flex;
+      justify-content: start;
+
+      flex-direction: column;
 
       h1 {
         color: map-get($primary, "main");
         text-transform: capitalize;
         margin-bottom: 0;
+
         span {
           color: white;
         }
@@ -40,6 +45,11 @@
     .container-contact {
       text-align: center;
       color: white;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+
+      flex-direction: column;
 
       .social {
         display: flex;
