@@ -2,6 +2,7 @@
 @import "./settings/base";
 
 //components
+@import "./components/layout-home";
 @import "./components/nav-bar";
 @import "./components/search-bar";
 @import "./components//banner";
@@ -12,4 +13,5 @@
 @import "./components/paginate";
 @import "./components/footer";
 @import "./components/error";
-@import "./components/loading"; //Screens
+@import "./components/loading";
+//Screens

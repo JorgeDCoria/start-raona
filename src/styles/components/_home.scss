@@ -13,6 +13,7 @@
   }
   @include desktop {
     grid-template-columns: repeat(4, minmax(200px, 1fr));
+    padding: 0 32px;
   }
 }
 

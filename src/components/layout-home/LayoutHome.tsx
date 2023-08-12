@@ -5,7 +5,7 @@ import Footer from "../layout/footer/Footer";
 
 const LayoutHome = () => {
   return (
-    <div>
+    <div className="layout-home">
       <NavBar />
       <Banner />
 
