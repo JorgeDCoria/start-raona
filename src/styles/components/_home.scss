@@ -15,3 +15,7 @@
     grid-template-columns: repeat(4, minmax(200px, 1fr));
   }
 }
+
+.home-modal {
+  background-color: rgba(map-get($secondary, "main"), 0.8);
+}

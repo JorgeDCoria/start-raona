@@ -13,15 +13,19 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ idMovie }) => {
     dispatch(actionGetMovieById(idMovie));
   }, []);
   return (
-    <div className="modal-movie-detail">
+    <>
       {movie ? (
-        <div>
+        <div className="modal-movie-detail">
           <img src={movie?.image} alt="Imagen" />
+          {/* ***** contenedor de informacion *** */}
           <div className="subcontainer">
-            <h2>{movie.title}</h2>
-            <p className="summary">{movie.summary}</p>
-            <div className="data-container">
-              <div className="more-info">
+            <div className="container-a">
+              <h2>{movie.title}</h2>
+              <p className="summary">{movie.summary}</p>
+            </div>
+
+            <div className="container-b">
+              <div className="more-info-a">
                 <p className="label">
                   Companias:
                   <span className="data">{movie.productionCompanies}</span>
@@ -33,8 +37,8 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ idMovie }) => {
                   Votos:<span className="data">{movie.voteCount}</span>
                 </p>
               </div>
-              <div>
-                {" "}
+
+              <div className="more-info-b">
                 <p>
                   <span className="adult">{movie.adult ? "+16" : "Todos"}</span>
                   <span className="data">{movie.genre}</span>
@@ -53,7 +57,7 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ idMovie }) => {
       ) : (
         <Loading />
       )}
-    </div>
+    </>
   );
 };
 

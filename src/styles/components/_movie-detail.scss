@@ -1,19 +1,19 @@
 .modal-movie-detail {
   display: flex;
-  height: 80vh;
+  height: 60vh;
   min-width: 50vw;
-  max-width: 900px;
+  max-width: 80vw;
   position: relative;
+  overflow-y: auto;
+
+  box-sizing: border-box;
 
   img {
     object-fit: cover;
     width: 100%;
     height: 100%;
   }
-
-  .summary {
-    text-align: justify;
-  }
+  //**** contenedor de informacion ****
   .subcontainer {
     position: absolute;
     padding: 8px;
@@ -25,85 +25,110 @@
       0deg,
       map-get($secondary, "main") 0%,
       map-get($secondary, "dark") 15%,
-      rgba(map-get($secondary, "ligth"), 0.1) 100%
+      rgba(map-get($secondary, "300"), 0.3) 100%
     );
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 16px;
     color: white;
 
-    h2 {
-      font-size: 2.5rem;
-      margin: 0;
-      color: map-get($primary, "main");
-    }
-    .adult {
-      border: 2px solid map-get($primary, "main");
-      padding: 2px;
-      font-size: 1rem;
-      margin-right: 4px;
-    }
-    .label {
-      color: map-get($secondary, "600");
-    }
-    .data {
-      color: white;
-      font-weight: 600;
-    }
-    .more-info {
-      display: none;
-    }
+    //contenedor a
+    .container-a {
+      max-height: 60%;
+      overflow-y: auto;
 
-    @include tablet {
-      font-size: 1.3rem;
-      padding: 0 16px;
-      justify-content: space-around;
       h2 {
-        font-size: 5rem;
+        font-size: 1.5rem;
+        margin: 0;
+        color: map-get($primary, "main");
+        text-shadow: 2px 2px 3px map-get($secondary, "main");
+      }
+      .summary {
+        text-align: justify;
+        font-size: 12px;
       }
     }
+    // contenedor b
+    .container-b {
+      .label {
+        color: map-get($secondary, "600");
+      }
+      .data {
+        color: white;
+        font-weight: 600;
+      }
 
-    @include desktop {
+      .adult {
+        border: 2px solid map-get($primary, "main");
+        padding: 2px;
+        font-size: 1rem;
+        margin-right: 4px;
+      }
+
+      .more-info-a {
+        display: none;
+      }
+    }
+  }
+  @include tablet {
+    min-width: 60vw;
+
+    .subcontainer {
+      .container-a {
+        max-height: 55%;
+        overflow-y: auto;
+        h2 {
+          font-size: 2.5rem;
+        }
+        .summary {
+          font-size: 1rem;
+        }
+      }
+
+      .container-b {
+        max-height: 45%;
+        overflow-y: auto;
+        .more-info-a {
+          display: block;
+        }
+      }
+    }
+  }
+  @include desktop {
+    height: 80vh;
+    min-width: 60vw;
+    img {
+      width: 70%;
+    }
+    .subcontainer {
       background: linear-gradient(
-        270deg,
+        299deg,
         map-get($secondary, "main") 0%,
-        map-get($secondary, "dark") 55%,
+        map-get($secondary, "dark") 45%,
         rgba(map-get($secondary, "ligth"), 0.1) 100%
       );
 
-      h2 {
-        font-size: 4rem;
-        text-align: right;
+      .container-a {
+        align-self: flex-end;
+        width: 60%;
+        min-height: 70%;
+        .summary {
+          font-size: 16px;
+        }
       }
 
-      .data-container {
+      .container-b {
+        min-height: 30%;
         display: grid;
-        grid-template-columns: repeat(2, minmax(200px, 1fr));
-      }
+        grid-template-columns: 30% 40%;
+        gap: 16px;
+        place-content: flex-end;
 
-      .more-info {
-        order: 1;
-        display: block;
+        .more-info-a {
+          order: 1;
+        }
       }
-      .label {
-        font-size: 1rem;
-      }
-      .data {
-        font-size: 1rem;
-      }
-    }
-  }
-
-  @include tablet {
-    .summary {
-      padding: 0 16px;
-    }
-  }
-
-  @include desktop {
-    .summary {
-      font-size: 1rem;
-      padding-left: 35%;
     }
   }
 }

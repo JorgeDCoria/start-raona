@@ -40,7 +40,12 @@ const Home = () => {
       </div>
       <Paginate />
       {isModalOpen && idMovie && (
-        <Modal isOpen={isModalOpen} onDismiss={hideModal} isBlocking={false}>
+        <Modal
+          isOpen={isModalOpen}
+          onDismiss={hideModal}
+          isBlocking={false}
+          className="home-modal"
+        >
           <MovieDetail idMovie={idMovie} />
         </Modal>
       )}
