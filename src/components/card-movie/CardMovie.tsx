@@ -2,14 +2,11 @@ import React from "react";
 import { Movie } from "../../types/Movie";
 import { DefaultButton } from "@fluentui/react";
 
-import { useNavigate } from "react-router-dom";
 interface CardMovieProps {
   movie: Movie;
   handleClick: (id: number) => void;
 }
 const CardMovie: React.FC<CardMovieProps> = ({ movie, handleClick }) => {
-  const navigate = useNavigate();
-
   return (
     <div
       className="cardmovie-container"

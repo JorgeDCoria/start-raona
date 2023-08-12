@@ -7,3 +7,8 @@
   font-size: 1.2rem;
   color: #dd6609;
 }
+
+.paginate-button-active{
+  background: #dd6609;
+  color: white;
+}

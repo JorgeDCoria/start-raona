@@ -58,7 +58,7 @@ export default function Paginate() {
   };
   return (
     <div className="paginate">
-      <button className=" button left" onClick={nextPage}>
+      <button className=" button left" onClick={prevPage}>
         <span>&lt;</span>
       </button>
       {numberPage &&
@@ -71,7 +71,7 @@ export default function Paginate() {
             <span>{num}</span>
           </button>
         ))}
-      <button className="button rigth" onClick={prevPage}>
+      <button className="button rigth" onClick={nextPage}>
         <span>&gt;</span>
       </button>
     </div>

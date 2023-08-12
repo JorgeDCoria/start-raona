@@ -10,7 +10,7 @@
   .button {
     width: 32px;
     border: 2px map-get($primary, "main") solid;
-    background: transparent;
+    background-color: transparent;
     border-radius: 2px;
     cursor: pointer;
     &:hover {
@@ -25,6 +25,9 @@
       justify-content: center;
       align-items: center;
     }
+  }
+  .button-active {
+    background-color: map-get($primary, "main");
   }
   @include tablet {
     width: 70%;
@@ -42,8 +45,4 @@
       font-size: 1rem;
     }
   }
-}
-
-.button-active {
-  background: map-get($primary, "main");
 }
