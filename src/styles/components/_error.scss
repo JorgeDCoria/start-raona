@@ -1,11 +1,9 @@
 .container-error {
   height: 30vh;
-
   background-color: white;
   margin-top: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center();
+
   .container-img {
     width: 50%;
     height: 100%;

@@ -22,9 +22,7 @@
 }
 
 .container-message-empty {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center();
   color: map-get($primary, "main");
   height: 50vh;
 }

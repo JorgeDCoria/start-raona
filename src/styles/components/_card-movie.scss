@@ -3,9 +3,7 @@
   width: 100%;
   min-height: 200px;
   max-height: 470px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center();
   position: relative;
   overflow: hidden;
   border-radius: 16px;
@@ -42,10 +40,10 @@
     &:hover .cardmovie-container-description .subcontainer {
       color: map-get($secondary, "main");
       height: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-direction: column;
+      @include flex-center(
+        $flex-direction: column,
+        $justify-content: space-around
+      );
     }
     & h1 {
       margin-bottom: 0;
