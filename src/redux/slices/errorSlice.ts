@@ -15,7 +15,7 @@ export const errorSlice = createSlice({
       state.error = action.payload;
     },
     cleanError: (state, action) => {
-      state.error = null;
+      state.error = action.payload;
     },
   },
 });

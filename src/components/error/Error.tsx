@@ -1,9 +1,16 @@
-import React from "react";
+import { useEffect } from "react";
 import image from "../../assets/error.png";
 import { useAppDispatch, useAppSelector } from "../../hooks/useStore";
+import { actionCleanError } from "../../redux/actions/errosActions";
 const Error = () => {
   const dispatch = useAppDispatch();
   const { error } = useAppSelector((state) => state.error);
+
+  useEffect(() => {
+    return () => {
+      actionCleanError();
+    };
+  }, [dispatch]);
   return (
     <div className="container-error">
       <div className="container-img">

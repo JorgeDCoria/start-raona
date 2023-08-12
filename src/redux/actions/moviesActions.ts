@@ -4,7 +4,7 @@ import {
   getMovieById,
   getMoviesByTitle,
 } from "../slices/moviesSlice";
-import { addError } from "../slices/errorSlice";
+import { addError, cleanError } from "../slices/errorSlice";
 import { Dispatch } from "redux";
 import { type MovieDetail } from "../../types/MovieDetail";
 
@@ -24,6 +24,7 @@ export const actionGetMoviesByTitle = (title: string, page: number = 1) => {
     try {
       const data = await movieService.getMoviesByTitle(title, page);
       dispatch(getMoviesByTitle(data));
+      dispatch(cleanError(null));
     } catch (e: any) {
       dispatch(addError(e));
     }
