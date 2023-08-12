@@ -38,13 +38,11 @@ const Home = () => {
             <CardMovie key={movie.id} movie={movie} handleClick={handleClick} />
           ))}
       </div>
-
-      {isModalOpen && idMovie ? (
+      <Paginate />
+      {isModalOpen && idMovie && (
         <Modal isOpen={isModalOpen} onDismiss={hideModal} isBlocking={false}>
           <MovieDetail idMovie={idMovie} />
         </Modal>
-      ) : (
-        <Loading />
       )}
     </>
   );

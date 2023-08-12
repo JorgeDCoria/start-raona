@@ -6,9 +6,9 @@ const listmenu = ["inicio", "series", "peliculas", "mi Lista", "novedades"];
 const NavBar = () => {
   return (
     <div className="nav-bar-container">
-      <p className="logo">
+      <h1 className="logo">
         start <span>raona</span>
-      </p>
+      </h1>
       <div className="constainer-menu">
         <button className="button-menu">
           <RiMenuFill />

@@ -37,7 +37,7 @@
   @include tablet {
     .logo {
       color: map-get($primary, "main");
-      text-transform: uppercase;
+      text-transform: capitalize;
       display: block;
     }
     .logo span {

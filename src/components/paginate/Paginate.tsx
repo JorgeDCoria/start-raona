@@ -37,7 +37,7 @@ export default function Paginate() {
       const newButtons = buildNumberButtons(numberPage, totalPages);
       setButtons(newButtons);
     }
-  }, [numberPage, totalPages, buildNumberButtons]);
+  }, [numberPage, totalPages]);
 
   const handlePage = (page: number) => {
     numberPage !== page && dispatch(actionGetMovies(page));
