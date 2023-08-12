@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../../hooks/useStore";
-import { actionGetMovieById } from "../../../../redux/actions/moviesActions";
+import {
+  actionGetMovieById,
+  actionClearMovieDetail,
+} from "../../../../redux/actions/moviesActions";
 import Loading from "../../../../components/loading/Loading";
 
 interface MovieDetailProps {
@@ -11,6 +14,10 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ idMovie }) => {
   const { detail: movie } = useAppSelector((state) => state.movies);
   useEffect(() => {
     dispatch(actionGetMovieById(idMovie));
+
+    return () => {
+      dispatch(actionClearMovieDetail());
+    };
   }, []);
   return (
     <>

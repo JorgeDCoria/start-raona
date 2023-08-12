@@ -24,9 +24,12 @@ export const moviesSlice = createSlice({
     getMovieById: (state, action: PayloadAction<MovieDetail>) => {
       state.detail = action.payload;
     },
+    clearMovieDetail: (state, action) => {
+      state.detail = action.payload;
+    },
   },
 });
 
-export const { getMovies, getMovieById, getMoviesByTitle } =
+export const { getMovies, getMovieById, getMoviesByTitle, clearMovieDetail } =
   moviesSlice.actions;
 export default moviesSlice.reducer;

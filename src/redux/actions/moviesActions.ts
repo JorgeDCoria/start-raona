@@ -3,6 +3,7 @@ import {
   getMovies,
   getMovieById,
   getMoviesByTitle,
+  clearMovieDetail,
 } from "../slices/moviesSlice";
 import { addError, cleanError } from "../slices/errorSlice";
 import { Dispatch } from "redux";
@@ -39,5 +40,11 @@ export const actionGetMovieById = (id: number) => {
     } catch (e: any) {
       dispatch(addError(e));
     }
+  };
+};
+
+export const actionClearMovieDetail = () => {
+  return async (dispatch: Dispatch) => {
+    dispatch(clearMovieDetail(null));
   };
 };
