@@ -1,6 +1,10 @@
 import banner from "../../assets/banner.jpg";
 import { PrimaryButton } from "@fluentui/react";
-const Banner = () => {
+/**
+ * Componente Banner para mostrar una portada y otros datos
+ * @returns {React.FC} El componente Banner.
+ */
+const Banner: React.FC = () => {
   return (
     <div className="banner">
       <img src={banner} alt="" />

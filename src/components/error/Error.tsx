@@ -2,12 +2,17 @@ import { useEffect } from "react";
 import image from "../../assets/error.png";
 import { useAppDispatch, useAppSelector } from "../../hooks/useStore";
 import { actionCleanError } from "../../redux/actions/errosActions";
-const Error = () => {
+/**
+ * Componente para mostrar errores
+ * @returns {React.FC} El componente Error.
+ */
+const Error: React.FC = () => {
   const dispatch = useAppDispatch();
   const { error } = useAppSelector((state) => state.error);
 
   useEffect(() => {
     return () => {
+      //cuando termina su ciclo de vida se actualiza el estado global error a null
       actionCleanError();
     };
   }, [dispatch]);

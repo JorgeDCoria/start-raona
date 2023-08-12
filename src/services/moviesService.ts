@@ -7,6 +7,11 @@ import adapterError from "../adapters/errorAdapter";
 import { MovieDetail } from "../types/MovieDetail";
 import { DataApi } from "../types/DataApi";
 
+/**
+ * Agrega la URL base de la imagen a cada objeto en el array de películas.
+ * @param {any[]} data - Array de objetos de películas.
+ * @returns {void}
+ */
 const addUrlToImage = (data: any[]): void => {
   data.forEach((movie: any) => {
     movie.poster_path = `${URL_BASE_IMAGE}${movie.poster_path}`;
@@ -14,10 +19,10 @@ const addUrlToImage = (data: any[]): void => {
 };
 
 /**
- * Function encardada de hacer una peticion a la api y asi obtener un array de peliculas.\n
- * Si la peticion es exitosa la funcion retorna el array de peliculas.\n
- * Si se presentase algun error durante la peticion, la funcion retornara un Error.
- * @returns {Promise<DataApi>} Promise<Movie[] | CustomError>
+ * Realiza una petición a la API para obtener un array de películas populares.
+ * @param {number} page - Número de página para la paginación.
+ * @returns {Promise<DataApi>} - Promesa que resuelve a un objeto DataApi.
+ * @throws {CustomError} - En caso de error durante la petición.
  */
 const getMovies = async (page: number): Promise<DataApi> => {
   try {
@@ -40,6 +45,13 @@ const getMovies = async (page: number): Promise<DataApi> => {
   }
 };
 
+/**
+ * Realiza una petición a la API para obtener un array de películas por título.
+ * @param {string} title - Título de la película a buscar.
+ * @param {number} page - Número de página para la paginación.
+ * @returns {Promise<DataApi>} - Promesa que resuelve a un objeto DataApi.
+ * @throws {CustomError} - En caso de error durante la petición.
+ */
 const getMoviesByTitle = async (
   title: string,
   page: number,
@@ -63,6 +75,12 @@ const getMoviesByTitle = async (
     throw adapterError.mapResponseErrorToCustomError(e);
   }
 };
+/**
+ * Realiza una petición a la API para obtener los detalles de una película por su ID.
+ * @param {number} id - ID de la película.
+ * @returns {Promise<MovieDetail>} - Promesa que resuelve a un objeto MovieDetail.
+ * @throws {CustomError} - En caso de error durante la petición.
+ */
 const getMovieById = async (id: number): Promise<MovieDetail> => {
   try {
     let data = await axios

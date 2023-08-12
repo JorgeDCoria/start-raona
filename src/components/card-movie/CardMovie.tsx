@@ -6,6 +6,16 @@ interface CardMovieProps {
   movie: Movie;
   handleClick: (id: number) => void;
 }
+
+/**
+ * Componente para mostrar detalles de una película en una tarjeta.
+ *
+ * @component
+ * @param {Object} props - Las propiedades del componente.
+ * @param {CardMovieProps} props.movie - Los detalles de la película.
+ * @param {function} props.handleClick - Función a llamar cuando se hace clic en la tarjeta.
+ * @returns {React.FC} - El componente CardMovie.
+ */
 const CardMovie: React.FC<CardMovieProps> = ({ movie, handleClick }) => {
   return (
     <div

@@ -29,6 +29,11 @@ const mapApiToMovies = (data: any[]): Movie[] => {
   return movies;
 };
 
+/**
+ * mapea un objeto movie de api a un objeto movie definido en el proycto
+ * @param data
+ * @returns {Movie} objeto mapeado
+ */
 const mapApiToMovieDetail = (data: any): MovieDetail => {
   return {
     id: data.id,

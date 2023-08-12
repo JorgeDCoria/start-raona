@@ -10,19 +10,25 @@ const initialState: MoviesState = {
   data: null,
   detail: null,
 };
+
+// Crea un slice de Redux para el manejo de estado de películas.
 export const moviesSlice = createSlice({
-  name: "movies",
+  name: "movies", // Nombre del slice.
   initialState: initialState,
   reducers: {
+    // Reducer para almacenar la lista de películas en el estado.
     getMovies: (state, action: PayloadAction<DataApi>) => {
       state.data = action.payload;
     },
+    // Reducer para almacenar la lista de películas filtradas por título en el estado.
     getMoviesByTitle: (state, action: PayloadAction<DataApi>) => {
       state.data = action.payload;
     },
+    //Reducer para almacenar la pelicula filtrada por Id
     getMovieById: (state, action: PayloadAction<MovieDetail>) => {
       state.detail = action.payload;
     },
+    // Reducer para limpiar los detalles de la película en el estado.
     clearMovieDetail: (state, action) => {
       state.detail = action.payload;
     },
